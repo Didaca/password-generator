@@ -6,7 +6,7 @@ PASSWORD_RANGE = 2
 CAPITAL_LETTERS_RANGE = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 LETTERS_RANGE = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 SYMBOLS_RANGE = ('@', '$', '*', '#', '^', '&', ')', '(',)
-NUMBERS_RANGE = 1, 10
+NUMBERS_RANGE_START, NUMBERS_RANGE_STOP = 1, 10
 
 
 def generate():
@@ -25,7 +25,7 @@ def generate():
             letter = random.choice(LETTERS_RANGE)
             all_letters += capital_letter + letter
 
-            number = random.randrange(NUMBERS_RANGE[0], NUMBERS_RANGE[1])
+            number = random.randrange(NUMBERS_RANGE_START, NUMBERS_RANGE_STOP)
             all_numbers += str(number)
 
         symbol = random.choice(SYMBOLS_RANGE)
