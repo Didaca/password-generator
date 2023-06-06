@@ -2,26 +2,33 @@ from tkinter import *
 import random
 
 
+PASSWORD_RANGE = 2
+CAPITAL_LETTERS_RANGE = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+LETTERS_RANGE = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+SYMBOLS_RANGE = ('@', '$', '*', '#', '^', '&', ')', '(',)
+NUMBERS_RANGE = 1, 10
+
+
 def generate():
 
     password = ""
     sum_symbols = []
 
-    for _ in range(2):
+    for _ in range(PASSWORD_RANGE):
 
         all_letters = ""
         all_numbers = ""
 
-        for _ in range(2):
+        for _ in range(PASSWORD_RANGE):
 
-            capital_letter = random.choice(['A', 'B', 'C', 'D', 'E', 'F', 'G'])
-            letter = random.choice(['a', 'b', 'c', 'd', 'e', 'f', 'g'])
+            capital_letter = random.choice(CAPITAL_LETTERS_RANGE)
+            letter = random.choice(LETTERS_RANGE)
             all_letters += capital_letter + letter
 
-            number = random.randrange(1, 10)
+            number = random.randrange(NUMBERS_RANGE[0], NUMBERS_RANGE[1])
             all_numbers += str(number)
 
-        symbol = random.choice(('@', '$', '*', '#', '^', '&', ')', '('))
+        symbol = random.choice(SYMBOLS_RANGE)
 
         password += all_letters + all_numbers + symbol
 
